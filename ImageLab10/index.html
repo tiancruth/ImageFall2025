@@ -5,11 +5,39 @@
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+      <!-- 
+        example of how to add an image to the scene
+
+        <img id= "name" src="path/to/your/image.jpg" alt="imagenme"> 
+
+        
+       DONT FORGET THE HASHTAGE ###########
+        <a-box src="#img id name" position="x y z" rotation="x y z" width="" height="" depth="" etc... ></a-box>
+
+      -->
+
+      <img id ="beachtowel" src="assets/volodymyr-hryshchenko-8bNryfuu71c-unsplash copy.jpg" alt="beachtowel">
+
+      <img id ="umbrella" src="assets/glenn-diaz-ZhPT_EzIqDo-unsplash copy.jpg">
+
+      <img id="volleyball" src="assets/H78a5e8601f994c4dbd3008c58dfbd7ac2.avif">
+      
+      <!-- a cooler  -->
+      <a-box position="-2 0.5 -3" rotation="0 15 0" width="1.5" height="1" depth="1" color="#FF0000"></a-box>
+      <a-box position="-2 1.10 -3" rotation="0 15 0" width="1.5" height="0.25" depth="1" color="#FFFFFF"></a-box>
+
+      <!--volleyball -->
+      <a-sphere src ="#volleyball" position="0 0.5 -5" rotation="45 45 0" radius="0.5"></a-sphere>
+
+      <!-- beach umbrella -->
+      <a-cylinder position="1 2 -3" radius="0.1" height="4" color="grey"></a-cylinder>
+      <a-cone src ="#umbrella" position="1 4 -3" radius-bottom="3" radius-top="0" height="2" rotation="0 0 0"></a-cone>
+
+      <!-- beach towel -->
+      <a-plane src="assets/volodymyr-hryshchenko-8bNryfuu71c-unsplash copy.jpg" position="0 0 -4" rotation="-90 0 0" width="6" height="4" color="#7BC8A4"></a-plane>
+
+
+      <a-sky src="assets/40423158882_07c6ebc66d_k copy.jpg"></a-sky>
     </a-scene>
   </body>
 </html>
