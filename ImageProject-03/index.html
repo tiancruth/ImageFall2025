@@ -51,7 +51,47 @@
           rotation="0 0 0"
           scale="40 40 40">
         </a-entity>
+
+        <a-entity 
+          id="lamp"
+          gltf-model="url(./assets/streetlamp3dmodel.glb)" 
+          position="30 -10 -60"
+          rotation="0 0 0"
+          scale="30 30 30">
+        </a-entity>
+
+        <a-entity>
+          <a-light 
+            type="point" 
+            color="#ffffff" 
+            intensity="2" 
+            distance="50" 
+            position="0 10 -40">
+          </a-light>
+        </a-entity>
   
     </a-scene>
   </body>
+  <script>
+    AFRAME.registerComponent('float', 
+    {
+      tick: function(time) 
+      {
+        // this makes it so ghost goes up and down like it's floating
+        const yOffset = Math.sin(time / 1000) * 2; // so it floats 2 units up and down
+        const xOffset = Math.sin(time / 1500) * 1; // this makes it look like ghost is going slightly side to side
+
+        // set the new position of the ghost, need this part so ghost actually like does the movements
+        this.el.setAttribute('position', 
+        {
+          x: xOffset,
+          y: -10 + yOffset,
+          z: -50
+        });
+      }
+    });
+    
+    // this actually applies like, the component to the ghost
+    document.querySelector('#ghost').setAttribute('float', '');
+  </script>
 </html>
